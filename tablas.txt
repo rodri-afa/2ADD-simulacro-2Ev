@@ -1,0 +1,23 @@
+DROP DATABASE IF EXISTS simulacro;
+
+CREATE DATABASE simulacro;
+USE simulacro;
+
+CREATE TABLE directores(
+id_director INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+nombre VARCHAR(100),
+apellidos VARCHAR(100),
+origen VARCHAR(100)
+);
+
+CREATE TABLE peliculas(
+id_pelicula INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+titulo VARCHAR(100),
+año INT,
+descripcion VARCHAR(200),
+id_director INT,
+FOREIGN KEY(id_director) REFERENCES directores(id_director)
+);
+
+
+
